@@ -1,0 +1,125 @@
+<section class="review">
+  <div class="review-container">
+    <div class="review-title">
+      <h2>
+        <span>Venda con nosotros</span>
+        Acceda a una entrevista
+      </h2>
+      <a href="/contacto">Solicitar entrevista</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .review {
+    position: relative;
+    min-height: min(72vh, 640px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(3rem, 8vw, 5rem) 20px;
+    overflow: hidden;
+  }
+
+  .review::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        165deg,
+        rgba(15, 40, 85, 0.72) 0%,
+        rgba(30, 64, 120, 0.45) 42%,
+        rgba(20, 55, 105, 0.58) 100%
+      ),
+      url("/BgReview.jpg") center/cover no-repeat;
+    z-index: 0;
+  }
+
+  .review::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse 85% 75% at 50% 45%,
+      rgba(59, 130, 246, 0.12) 0%,
+      transparent 55%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .review-container {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .review-title {
+    padding: clamp(1.75rem, 4vw, 2.5rem) clamp(1.5rem, 4vw, 2.25rem);
+    border-radius: 20px;
+    background: rgba(15, 35, 70, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(147, 197, 253, 0.22);
+    box-shadow:
+      0 24px 48px rgba(8, 30, 70, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  .review-title h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 600;
+    color: #f0f7ff;
+    line-height: 1.28;
+    margin: 0 0 1.5rem;
+    text-shadow: 0 2px 24px rgba(8, 25, 60, 0.45);
+  }
+
+  .review-title h2 span {
+    display: block;
+    font-size: clamp(0.8125rem, 2vw, 1rem);
+    color: #bfdbfe;
+    font-weight: 500;
+    margin-bottom: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-shadow: 0 1px 12px rgba(8, 30, 70, 0.4);
+  }
+
+  .review-title a {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 45%, #60a5fa 100%);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    border: 1px solid rgba(191, 219, 254, 0.35);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .review-title a:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 12px 32px rgba(37, 99, 235, 0.4),
+      0 0 0 1px rgba(147, 197, 253, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    .review {
+      min-height: min(65vh, 520px);
+      padding: 3rem 16px;
+    }
+
+    .review-title {
+      border-radius: 16px;
+    }
+  }
+</style>
