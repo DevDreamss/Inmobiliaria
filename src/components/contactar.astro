@@ -1,0 +1,92 @@
+<section class="contacto">
+  <div class="contacto-box">
+
+    <h2>Contactanos</h2>
+    <p>Dejanos tus datos y te respondemos a la brevedad</p>
+
+    <form class="form">
+
+      <input type="text" placeholder="Nombre completo" required>
+
+      <input type="tel" placeholder="Número de teléfono" required>
+
+      <input type="email" placeholder="Correo electrónico" required>
+
+      <textarea placeholder="Escribí tu consulta..." rows="4" required></textarea>
+
+      <button type="submit">Enviar consulta</button>
+
+    </form>
+
+  </div>
+</section>
+<style>
+  .contacto {
+  background: linear-gradient(135deg, #0d4d8b, #0a2e5c);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+}
+
+.contacto-box {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 100%;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.contacto-box h2 {
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+.contacto-box p {
+  margin-bottom: 25px;
+  opacity: 0.8;
+}
+
+/* FORM */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form input,
+.form textarea {
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  resize: none;
+}
+
+/* FOCUS (detalle premium) */
+.form input:focus,
+.form textarea:focus {
+  box-shadow: 0 0 0 2px #ffffff50;
+}
+
+/* BOTÓN */
+.form button {
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: white;
+  color: #0d4d8b;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form button:hover {
+  background: #eaeaea;
+  transform: translateY(-2px);
+}
+</style>
