@@ -3,9 +3,23 @@ import astroLogo from '../assets/astro.svg';
 import background from '../assets/background.svg';
 ---
 
-<div id="container">
-
-</div>
+<container id="container">
+	<div class="welcome-content">
+		
+		<p>Contactanos ────────</p>
+		
+	</div>
+	<div class="welcome.texto-grande">
+		<h3>Excelentes negocios inmobiliarios</h3>
+	</div>
+	<div class="welcome-texto-pequeno">
+		<p>Con el objetivo de brindar el mejor servicio, calidad y precio, 
+			estamos permanentemente mejorando nuestros procesos internos 
+			y la eficiencia en cada negocio inmobiliario. 
+			Contactanos si querés tasar, vender, comprar o alquilar una propiedad.</p>
+		<a href="/contacto" class="btn">Contáctanos</a>
+	</div>	
+</container>
 
 <style>
 #container {
@@ -17,4 +31,31 @@ import background from '../assets/background.svg';
 	justify-content: center;
 	align-items: center;
 }
+
+.welcome-content {
+	text-align: center;
+	color: #fff;
+}
+.welcome.texto-grande {
+	font-size: 2.5rem;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+.welcome-texto-pequeno {
+	font-size: 1.2rem;
+	margin-bottom: 30px;
+	color: #fff;
+}
+.btn {
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: #007BFF;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
+}
+.btn:hover {	background-color: #0056b3;
+}
+
 </style>
