@@ -1,75 +1,71 @@
-
 <section id="container">
-<div class="welcome-content">
-	
-		<div class="welcome-texto-grande">
-			<h1>Excelentes negocios inmobiliarios</h1>
-		</div>
+  <div class="welcome-content">
+    <div class="welcome-texto-grande">
+      <h1>Excelentes negocios inmobiliarios</h1>
+    </div>
 
-		<div class="welcome-texto-pequeno">
-			<p>Con el objetivo de brindar el mejor servicio, calidad y precio, 
-			estamos permanentemente mejorando nuestros procesos internos 
-			y la eficiencia en cada negocio inmobiliario. 
-			Contactanos si querés tasar, vender, comprar o alquilar una propiedad.
-			</p>
-			<a href="/contacto" class="btn">Contáctanos</a>
-		</div>
-</div>	
+    <div class="welcome-texto-pequeno">
+      <p>
+        Con el objetivo de brindar el mejor servicio, calidad y precio, estamos
+        permanentemente mejorando nuestros procesos internos y la eficiencia en
+        cada negocio inmobiliario. Contactanos si querés tasar, vender, comprar
+        o alquilar una propiedad.
+      </p>
+      <a href="/contacto" class="btn">Contáctanos</a>
+    </div>
+  </div>
 </section>
 
 <style>
-.welcome-content {
-display: flex;
-justify-content: space-evenly;
-  align-items: center;
-  margin: 5rem;
-}
-.welcome-texto-grande h1{
-	font-size: 3rem;
-  font-weight: bold;
-  margin: 0;
-
-}
-.welcome-texto-pequeno {
-	font-size: 1.25rem;
-  max-width: 550px;
-}
-.btn {
-	display: inline-block;
-	padding: 10px 20px;
-	background-color: #007BFF;
-	color: #fff;
-	text-decoration: none;
-	border: 2px solid #007BFF;
-	transition: background-color 0.3s ease;
-}
-.btn:hover {	background-color: #ffffff;
-	color: #007BFF;
-}
-
-/* 📱 Celulares */
-@media (max-width: 768px) {
-
   .welcome-content {
-    flex-direction: column; /* apila */
-    text-align: center;
-    margin: 2rem;
-    gap: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 5rem;
   }
-
- .welcome-texto-grande h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
-}
-
+  .welcome-texto-grande h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+  }
   .welcome-texto-pequeno {
-    max-width: 100%;
-    font-size: 1rem;
+    font-size: 1.25rem;
+    max-width: 550px;
   }
-
   .btn {
-    padding: 12px 25px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #007bff;
+    transition: background-color 0.3s ease;
+  }
+  .btn:hover {
+    background-color: #ffffff;
+    color: #007bff;
   }
 
-}
+  /* 📱 Celulares */
+  @media (max-width: 768px) {
+    .welcome-content {
+      flex-direction: column; /* apila */
+      text-align: center;
+      margin: 2rem;
+      gap: 2rem;
+    }
 
+    .welcome-texto-grande h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    .welcome-texto-pequeno {
+      max-width: 100%;
+      font-size: 1rem;
+    }
+
+    .btn {
+      padding: 12px 25px;
+    }
+  }
 </style>

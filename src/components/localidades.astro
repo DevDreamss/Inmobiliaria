@@ -8,47 +8,49 @@
     <a href="/las-flores" class="card">LAS FLORES</a>
     <a href="/general-alvear" class="card">GENERAL ALVEAR</a>
     <a href="/buenos-aires" class="card">BUENOS AIRES</a>
-      <a href="/cañuelas" class="card">CAÑUELAS</a>
+    <a href="/cañuelas" class="card">CAÑUELAS</a>
     <a href="/azul" class="card">AZUL</a>
     <a href="/tapalque" class="card">TAPALQUE</a>
     <a href="/lobos" class="card">LOBOS</a>
   </div>
 </section>
 <style>
-.zonas {
-  background: #eaeaea;
-  padding: 40px;
-}
+  .zonas {
+    background: #eaeaea;
+    padding: 40px;
+  }
 
-/* GRID adaptable automático */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-}
+  /* GRID adaptable automático */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+  }
 
-/* TARJETAS */
-.card {
-  background-color: #0d4d8b;
-  color: white;
-  font-weight: bold;
+  /* TARJETAS */
+  .card {
+    background-color: #0d4d8b;
+    color: white;
+    font-weight: bold;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  height: 150px;
-  text-align: center;
-  letter-spacing: 1px;
+    height: 150px;
+    text-align: center;
+    letter-spacing: 1px;
 
-  text-decoration: none; /* ❗ sacar subrayado */
-  
-  transition: transform 0.3s ease, background 0.3s ease;
-}
+    text-decoration: none; /* ❗ sacar subrayado */
 
-/* Hover */
-.card:hover {
-  transform: scale(1.05);
-  background-color: #083a66;
-}
+    transition:
+      transform 0.3s ease,
+      background 0.3s ease;
+  }
+
+  /* Hover */
+  .card:hover {
+    transform: scale(1.05);
+    background-color: #083a66;
+  }
 </style>
