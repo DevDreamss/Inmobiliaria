@@ -1,56 +1,159 @@
-<section class="zonas">
-  <div class="grid">
-    <a href="/saladillo" class="card">SALADILLO</a>
-    <a href="/roque-perez" class="card">ROQUE PEREZ</a>
-    <a href="/25-de-mayo" class="card">25 DE MAYO</a>
-    <a href="/costa-atlantica" class="card">COSTA ATLÁNTICA</a>
-    <a href="/la-plata" class="card">LA PLATA</a>
-    <a href="/las-flores" class="card">LAS FLORES</a>
-    <a href="/general-alvear" class="card">GENERAL ALVEAR</a>
-    <a href="/buenos-aires" class="card">BUENOS AIRES</a>
-    <a href="/cañuelas" class="card">CAÑUELAS</a>
-    <a href="/azul" class="card">AZUL</a>
-    <a href="/tapalque" class="card">TAPALQUE</a>
-    <a href="/lobos" class="card">LOBOS</a>
+<section class="zonas" aria-labelledby="zonas-titulo">
+  <div class="zonas-inner">
+    <header class="zonas-head">
+      <h2 id="zonas-titulo">
+        <span>Localidades</span>
+        Trabajamos en toda la zona
+      </h2>
+      <p class="zonas-lead">
+        Elegí una zona para ver propiedades o contactanos para otras ubicaciones en la provincia.
+      </p>
+    </header>
+
+    <div class="grid">
+      <a href="/saladillo" class="card">Saladillo</a>
+      <a href="/roque-perez" class="card">Roque Pérez</a>
+      <a href="/25-de-mayo" class="card">25 de Mayo</a>
+      <a href="/costa-atlantica" class="card">Costa Atlántica</a>
+      <a href="/la-plata" class="card">La Plata</a>
+      <a href="/las-flores" class="card">Las Flores</a>
+      <a href="/general-alvear" class="card">General Alvear</a>
+      <a href="/buenos-aires" class="card">Buenos Aires</a>
+      <a href="/cañuelas" class="card">Cañuelas</a>
+      <a href="/azul" class="card">Azul</a>
+      <a href="/tapalque" class="card">Tapalqué</a>
+      <a href="/lobos" class="card">Lobos</a>
+    </div>
   </div>
 </section>
+
 <style>
   .zonas {
-    background: #eaeaea;
-    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    padding: clamp(3rem, 8vw, 5rem) clamp(1.25rem, 4vw, 2.5rem);
+    font-family: "Poppins", sans-serif;
   }
 
-  /* GRID adaptable automático */
+  .zonas::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, #eef2f7 0%, #e2e8f0 45%, #eaeaea 100%);
+    z-index: 0;
+  }
+
+  .zonas::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse 70% 50% at 50% 0%,
+      rgba(59, 130, 246, 0.08) 0%,
+      transparent 55%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .zonas-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .zonas-head {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 2.5rem;
+  }
+
+  .zonas-head h2 {
+    font-size: clamp(1.75rem, 4vw, 2.35rem);
+    font-weight: 600;
+    color: #0f172a;
+    line-height: 1.28;
+    margin: 0 0 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .zonas-head h2 span {
+    display: block;
+    font-size: clamp(0.8125rem, 2vw, 0.9375rem);
+    color: #2563eb;
+    font-weight: 500;
+    margin-bottom: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .zonas-lead {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #475569;
+  }
+
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: clamp(1rem, 3vw, 1.5rem);
   }
 
-  /* TARJETAS */
   .card {
-    background-color: #0d4d8b;
-    color: white;
-    font-weight: bold;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
-    height: 150px;
+    min-height: 120px;
+    padding: 1.25rem 1rem;
     text-align: center;
-    letter-spacing: 1px;
-
-    text-decoration: none; /* ❗ sacar subrayado */
-
+    text-decoration: none;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #f0f7ff;
+    border-radius: 16px;
+    border: 1px solid rgba(147, 197, 253, 0.25);
+    background: linear-gradient(145deg, #0d4d8b 0%, #0a2e5c 100%);
+    box-shadow:
+      0 4px 16px rgba(8, 30, 70, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
     transition:
-      transform 0.3s ease,
-      background 0.3s ease;
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      border-color 0.25s ease;
   }
 
-  /* Hover */
   .card:hover {
-    transform: scale(1.05);
-    background-color: #083a66;
+    transform: translateY(-4px);
+    border-color: rgba(191, 219, 254, 0.45);
+    box-shadow:
+      0 16px 36px rgba(37, 99, 235, 0.25),
+      0 0 0 1px rgba(147, 197, 253, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .card:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 768px) {
+    .zonas-head {
+      margin-bottom: 2rem;
+    }
+
+    .grid {
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.85rem;
+    }
+
+    .card {
+      min-height: 100px;
+      border-radius: 14px;
+      font-size: 0.75rem;
+    }
   }
 </style>

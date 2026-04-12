@@ -1,102 +1,227 @@
-<section class="ubicacion">
+---
+const mapsUrl =
+  "https://www.google.com/maps/search/?api=1&query=Av.+Belgrano+2498%2C+Saladillo%2C+Buenos+Aires";
+---
 
+<section class="ubicacion" aria-labelledby="ubicacion-titulo">
   <div class="mapa">
-    <img src="/mapa.png" alt="Mapa ubicación">
-    <div class="overlay"></div>
+    <img
+      class="mapa-img"
+      src="/mapa.png"
+      alt="Mapa con la ubicación de la oficina en Av. Belgrano 2498, Saladillo"
+      width="800"
+      height="600"
+      loading="lazy"
+    />
   </div>
 
   <div class="info">
-    <h2>Encuéntranos en el mapa</h2>
-    <p>
-      Nuestra casa central está en Saladillo, pero hacemos negocios inmobiliarios en toda la provincia de Buenos Aires. Va a encontrar nuestros carteles de venta o alquiler en Saladillo y alrededores, Roque Pérez, 25 de Mayo, toda la Costa Atlántica, La Plata, Las Flores, General Alvear y más.
+    <h2 id="ubicacion-titulo">
+      <span>Ubicación</span>
+      Encuéntranos en el mapa
+    </h2>
 
-Si está planeando invertir en lotes, casas, chacras o campos, va a encontrar con nuestra firma un servicio de plena confianza con los mejores espacios de cada ciudad a su disposición.
+    <div class="info-texto">
+      <p>
+        Nuestra casa central está en Saladillo, pero hacemos negocios inmobiliarios
+        en toda la provincia de Buenos Aires. Encontrá nuestros carteles de venta o
+        alquiler en Saladillo y alrededores, Roque Pérez, 25 de Mayo, la Costa
+        Atlántica, La Plata, Las Flores, General Alvear y más.
+      </p>
+      <p>
+        Si estás planeando invertir en lotes, casas, chacras o campos, con nuestra
+        firma tenés un servicio de confianza y los mejores espacios de cada zona a
+        tu disposición.
+      </p>
+    </div>
 
-    </p>
-    <a class="btn">Estamos en Av. Belgrano 2498, Saladillo, Provincia de Buenos Aires. Puede encontrarnos en nuestras oficinas de lunes a viernes de 9 a 12hs, y de 17 a 19hs.</a>
+    <div class="direccion-caja">
+      <p class="direccion-calle">Av. Belgrano 2498, Saladillo, Provincia de Buenos Aires</p>
+      <p class="direccion-horario">
+        Oficina: lunes a viernes, 9 a 12 hs y de 17 a 19 hs.
+      </p>
+      <a class="btn-maps" href={mapsUrl} target="_blank" rel="noopener noreferrer">
+        Abrir en Google Maps
+      </a>
+    </div>
   </div>
-
 </section>
+
 <style>
-    .ubicacion {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  min-height: 400px;
-}
-
-/* MAPA */
-.mapa {
-  position: relative;
-  overflow: hidden;
-}
-
-.mapa img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-/* overlay oscuro elegante */
-.overlay {
-  position: absolute;
-  inset: 0;
-}
-
-/* efecto hover */
-.mapa:hover img {
-  transform: scale(1.05);
-}
-
-/* INFO */
-.info {
-  background: linear-gradient(135deg, #0d4d8b, #0a2e5c);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 60px;
-}
-
-.info h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-}
-
-.info p {
-  opacity: 0.85;
-  line-height: 1.6;
-  margin-bottom: 25px;
-}
-
-/* BOTÓN */
-.btn {
-  display: inline-block;
-  padding: 12px 25px;
-  background: white;
-  color: #0d4d8b;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #eaeaea;
-  transform: translateY(-2px);
-}
-@media (max-width: 768px) {
+  /* Ritmo vertical como catálogo / reseñas; tipografía como esas secciones + contacto */
   .ubicacion {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    align-items: stretch;
+    min-height: min(520px, 70vh);
+    padding-block: clamp(2.5rem, 6vw, 4rem);
+    font-family: "Poppins", sans-serif;
   }
 
-    .mapa img{
-       display: none;
-    }
+  .mapa {
+    background: #f7f7f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(28px, 5vw, 48px) clamp(20px, 4vw, 40px);
+    min-height: 380px;
+  }
+
+  .mapa-img {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    max-height: min(540px, 65vh);
+    object-fit: contain;
+    object-position: center;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  }
 
   .info {
-    padding: 30px;
-    text-align: center;
+    background: linear-gradient(135deg, #0d4d8b, #0a2e5c);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.75rem, 5vw, 3.5rem);
+    gap: 1.5rem;
+    box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.04);
   }
-}
+
+  .info h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 600;
+    color: #f0f7ff;
+    line-height: 1.28;
+    margin: 0;
+    text-shadow: 0 2px 24px rgba(8, 25, 60, 0.45);
+  }
+
+  .info h2 span {
+    display: block;
+    font-size: clamp(0.8125rem, 2vw, 1rem);
+    color: #bfdbfe;
+    font-weight: 500;
+    margin-bottom: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-shadow: 0 1px 12px rgba(8, 30, 70, 0.4);
+  }
+
+  .info-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .info-texto p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.65;
+    opacity: 0.88;
+  }
+
+  /* Misma lógica visual que .catalog-title / .review-title */
+  .direccion-caja {
+    margin-top: 0.25rem;
+    padding: clamp(1.25rem, 3vw, 1.65rem) clamp(1.25rem, 3vw, 1.75rem);
+    border-radius: 20px;
+    background: rgba(15, 35, 70, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(147, 197, 253, 0.22);
+    box-shadow:
+      0 24px 48px rgba(8, 30, 70, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  .direccion-calle {
+    margin: 0 0 0.65rem;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #f0f7ff;
+  }
+
+  .direccion-horario {
+    margin: 0 0 1.15rem;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.82);
+  }
+
+  /* Mismo criterio que .form button en contactar.astro */
+  .btn-maps {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #fff;
+    color: #0d4d8b;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  .btn-maps:hover {
+    background: #eaeaea;
+    transform: translateY(-2px);
+  }
+
+  .btn-maps:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 768px) {
+    .ubicacion {
+      grid-template-columns: 1fr;
+    }
+
+    .mapa {
+      order: 2;
+      min-height: 280px;
+      padding: 1.5rem 1.25rem 2.25rem;
+    }
+
+    .mapa-img {
+      max-height: none;
+      border-radius: 16px;
+    }
+
+    .info {
+      order: 1;
+      text-align: center;
+      align-items: center;
+      padding: 2.25rem 1.25rem 1.75rem;
+      box-shadow: none;
+    }
+
+    .info-texto {
+      text-align: left;
+      max-width: 36rem;
+      width: 100%;
+    }
+
+    .direccion-caja {
+      text-align: left;
+      width: 100%;
+      max-width: 36rem;
+      border-radius: 16px;
+    }
+
+    .btn-maps {
+      width: 100%;
+      max-width: 280px;
+    }
+  }
 </style>
