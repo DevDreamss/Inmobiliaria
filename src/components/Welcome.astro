@@ -2,7 +2,7 @@
 <section id="container">
 <div class="welcome-content">
 	
-		<div class="welcome.texto-grande">
+		<div class="welcome-texto-grande">
 			<h1>Excelentes negocios inmobiliarios</h1>
 		</div>
 
@@ -20,20 +20,24 @@
 <style>
 section {
 	display: flex;
-  justify-content: space-between;
-  align-items: center;	
-  max-width: 300px;
+  justify-content: center;
+  align-items: center;
 }
-
-.welcome.texto-grande {
-	font-size: 60px;
+.welcome-content {
+display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5rem;
+}
+.welcome-texto-grande h1{
+	font-size: 3rem;
   font-weight: bold;
   margin: 0;
 
 }
 .welcome-texto-pequeno {
-	font-size: 18px;
-  max-width: 400px;
+	font-size: 1.25rem;
+  max-width: 550px;
 }
 .btn {
 	display: inline-block;
@@ -41,10 +45,11 @@ section {
 	background-color: #007BFF;
 	color: #fff;
 	text-decoration: none;
-	border-radius: 5px;
+	border: 2px solid #007BFF;
 	transition: background-color 0.3s ease;
 }
-.btn:hover {	background-color: #0056b3;
+.btn:hover {	background-color: #ffffff;
+	color: #007BFF;
 }
 
 </style>
