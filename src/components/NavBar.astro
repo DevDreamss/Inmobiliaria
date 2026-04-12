@@ -43,7 +43,7 @@
     const toggleBtn = toggle;
     const mq = window.matchMedia("(max-width: 768px)");
 
-    function setOpen(/** @type {boolean} */ open) {
+    function setOpen(open: boolean) {
       navbarEl.classList.toggle("is-open", open);
       toggleBtn.setAttribute("aria-expanded", open ? "true" : "false");
       toggleBtn.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
