@@ -1,0 +1,45 @@
+<section class="zonas">
+  <div class="grid">
+    <div class="card">SALADILLO</div>
+    <div class="card">ROQUE PEREZ</div>
+    <div class="card">25 DE MAYO</div>
+    <div class="card">COSTA ATLÁNTICA</div>
+    <div class="card">LA PLATA</div>
+    <div class="card">LAS FLORES</div>
+    <div class="card">GENERAL ALVEAR</div>
+    <div class="card">BUENOS AIRES</div>
+  </div>
+</section>
+<style>
+.zonas {
+  background: #eaeaea;
+  padding: 40px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+  gap: 30px;
+}
+
+/* TARJETAS */
+.card {
+  background-color: #0d4d8b;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  text-align: center;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Hover */
+.card:hover {
+  transform: scale(1.05);
+  background-color: #083a66;
+}
+</style>

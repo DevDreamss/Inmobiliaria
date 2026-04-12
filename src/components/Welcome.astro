@@ -52,4 +52,29 @@ display: flex;
 	color: #007BFF;
 }
 
+/* 📱 Celulares */
+@media (max-width: 768px) {
+
+  .welcome-content {
+    flex-direction: column; /* apila */
+    text-align: center;
+    margin: 2rem;
+    gap: 2rem;
+  }
+
+ .welcome-texto-grande h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+  .welcome-texto-pequeno {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 12px 25px;
+  }
+
+}
+
 </style>
