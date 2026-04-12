@@ -1,20 +1,84 @@
 ---
-
 ---
 
-<section class="navbar">
+<section class="navbar" data-navbar>
+  <div class="navbar-backdrop" data-nav-backdrop aria-hidden="true"></div>
   <div class="navbar-container">
     <div class="navbar-logo">
-      <img src="/Logo.png" alt="Logo" />
+      <a href="/" class="navbar-logo-link">
+        <img src="/Logo.png" alt="Logo" />
+      </a>
     </div>
-    <div class="navbar-links">
+    <button
+      type="button"
+      class="navbar-burger"
+      data-nav-toggle
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="primary-nav"
+    >
+      <span class="navbar-burger-line" aria-hidden="true"></span>
+      <span class="navbar-burger-line" aria-hidden="true"></span>
+      <span class="navbar-burger-line" aria-hidden="true"></span>
+    </button>
+    <nav class="navbar-links" id="primary-nav" aria-label="Principal">
       <a href="/">Inicio</a>
       <a href="/">Catalogo</a>
       <a href="/">Tasaciones</a>
       <a href="/">Contacto</a>
-    </div>
+    </nav>
   </div>
 </section>
+
+<script>
+  function setupMobileNav() {
+    const root = document.querySelector("[data-navbar]");
+    const toggle = document.querySelector("[data-nav-toggle]");
+    const backdrop = document.querySelector("[data-nav-backdrop]");
+    const links = root?.querySelectorAll("#primary-nav a");
+
+    if (!root || !toggle) return;
+
+    const navbarEl = root;
+    const toggleBtn = toggle;
+    const mq = window.matchMedia("(max-width: 768px)");
+
+    function setOpen(/** @type {boolean} */ open) {
+      navbarEl.classList.toggle("is-open", open);
+      toggleBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      toggleBtn.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+      if (backdrop) backdrop.setAttribute("aria-hidden", open ? "false" : "true");
+      document.body.style.overflow = open ? "hidden" : "";
+    }
+
+    function closeIfDesktop() {
+      if (!mq.matches) setOpen(false);
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      if (!mq.matches) return;
+      setOpen(!navbarEl.classList.contains("is-open"));
+    });
+
+    backdrop?.addEventListener("click", () => setOpen(false));
+
+    links?.forEach((a) => {
+      a.addEventListener("click", () => {
+        if (mq.matches) setOpen(false);
+      });
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") setOpen(false);
+    });
+
+    window.addEventListener("resize", closeIfDesktop);
+    mq.addEventListener("change", closeIfDesktop);
+  }
+
+  setupMobileNav();
+  document.addEventListener("astro:after-swap", setupMobileNav);
+</script>
 
 <style>
   .navbar {
@@ -24,7 +88,7 @@
     z-index: 1000;
     background: white;
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(12, 19, 36, 0.06);
   }
 
   .navbar-container {
@@ -34,6 +98,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+  }
+
+  .navbar-logo-link {
+    display: inline-block;
+    line-height: 0;
   }
 
   .navbar-logo img {
@@ -45,6 +115,58 @@
 
   .navbar-logo img:hover {
     transform: scale(1.05);
+  }
+
+  .navbar-burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(145deg, rgba(37, 99, 235, 0.08), rgba(96, 165, 250, 0.12));
+    cursor: pointer;
+    transition: background 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .navbar-burger:hover {
+    background: linear-gradient(145deg, rgba(37, 99, 235, 0.14), rgba(96, 165, 250, 0.18));
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.15);
+  }
+
+  .navbar-burger-line {
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin: 0 auto;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #2563eb, #3b82f6);
+    transition:
+      transform 0.3s ease,
+      opacity 0.25s ease,
+      translate 0.3s ease;
+  }
+
+  .navbar.is-open .navbar-burger-line:nth-child(1) {
+    translate: 0 8px;
+    transform: rotate(45deg);
+  }
+
+  .navbar.is-open .navbar-burger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  .navbar.is-open .navbar-burger-line:nth-child(3) {
+    translate: 0 -8px;
+    transform: rotate(-45deg);
+  }
+
+  .navbar-backdrop {
+    display: none;
   }
 
   .navbar-links {
@@ -82,16 +204,94 @@
   }
 
   @media (max-width: 768px) {
+    .navbar-burger {
+      display: flex;
+    }
+
+    .navbar-backdrop {
+      display: block;
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: rgba(12, 25, 55, 0.45);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+    }
+
+    .navbar.is-open .navbar-backdrop {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      z-index: 998;
+    }
+
+    .navbar.is-open {
+      z-index: 1000;
+    }
+
     .navbar-container {
       padding: 12px 16px;
+      z-index: 1001;
     }
 
     .navbar-links {
-      gap: 18px;
+      position: absolute;
+      top: calc(100% + 0px);
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      gap: 0;
+      margin: 0 12px;
+      padding: 8px 0;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid rgba(147, 197, 253, 0.35);
+      box-shadow:
+        0 20px 50px rgba(15, 40, 85, 0.18),
+        0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-12px) scale(0.98);
+      transform-origin: top center;
+      pointer-events: none;
+      transition:
+        opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0.35s ease,
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .navbar.is-open .navbar-links {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(8px) scale(1);
+      pointer-events: auto;
     }
 
     .navbar-links a {
-      font-size: 14px;
+      font-size: 15px;
+      padding: 14px 22px;
+      text-align: center;
+      color: #0c1324;
+    }
+
+    .navbar-links a::after {
+      display: none;
+    }
+
+    .navbar-links a:hover,
+    .navbar-links a:focus-visible {
+      color: #1d4ed8;
+      background: linear-gradient(90deg, rgba(59, 130, 246, 0.08), rgba(96, 165, 250, 0.06));
+    }
+
+    .navbar-links a:not(:last-child) {
+      border-bottom: 1px solid rgba(59, 130, 246, 0.12);
     }
 
     .navbar-logo img {
