@@ -1,13 +1,17 @@
 <section class="zonas">
   <div class="grid">
-    <div class="card">SALADILLO</div>
-    <div class="card">ROQUE PEREZ</div>
-    <div class="card">25 DE MAYO</div>
-    <div class="card">COSTA ATLÁNTICA</div>
-    <div class="card">LA PLATA</div>
-    <div class="card">LAS FLORES</div>
-    <div class="card">GENERAL ALVEAR</div>
-    <div class="card">BUENOS AIRES</div>
+    <a href="/saladillo" class="card">SALADILLO</a>
+    <a href="/roque-perez" class="card">ROQUE PEREZ</a>
+    <a href="/25-de-mayo" class="card">25 DE MAYO</a>
+    <a href="/costa-atlantica" class="card">COSTA ATLÁNTICA</a>
+    <a href="/la-plata" class="card">LA PLATA</a>
+    <a href="/las-flores" class="card">LAS FLORES</a>
+    <a href="/general-alvear" class="card">GENERAL ALVEAR</a>
+    <a href="/buenos-aires" class="card">BUENOS AIRES</a>
+      <a href="/cañuelas" class="card">CAÑUELAS</a>
+    <a href="/azul" class="card">AZUL</a>
+    <a href="/tapalque" class="card">TAPALQUE</a>
+    <a href="/lobos" class="card">LOBOS</a>
   </div>
 </section>
 <style>
@@ -16,10 +20,10 @@
   padding: 40px;
 }
 
-/* GRID */
+/* GRID adaptable automático */
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
 }
 
@@ -28,12 +32,17 @@
   background-color: #0d4d8b;
   color: white;
   font-weight: bold;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   height: 150px;
   text-align: center;
   letter-spacing: 1px;
+
+  text-decoration: none; /* ❗ sacar subrayado */
+  
   transition: transform 0.3s ease, background 0.3s ease;
 }
 
