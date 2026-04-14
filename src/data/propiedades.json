@@ -4,7 +4,7 @@
       "titulo": "Casa moderna con patio",
       "tipo": "casa",
       "localidad": "saladillo",
-      "imagen": "/images/casa1.jpg",
+      "imagen": "/mapa.png",
       "precio": "120.000 USD",
       "descripcion": "Hermosa casa con 3 habitaciones, patio amplio y garage.",
       "vendedor": {
