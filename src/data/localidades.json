@@ -1,0 +1,14 @@
+[
+    { "nombre": "Saladillo", "slug": "saladillo" },
+    { "nombre": "Roque Pérez", "slug": "roque-perez" },
+    { "nombre": "25 de Mayo", "slug": "25-de-mayo" },
+    { "nombre": "Costa Atlántica", "slug": "costa-atlantica" },
+    { "nombre": "La Plata", "slug": "la-plata" },
+    { "nombre": "Las Flores", "slug": "las-flores" },
+    { "nombre": "General Alvear", "slug": "general-alvear" },
+    { "nombre": "Buenos Aires", "slug": "buenos-aires" },
+    { "nombre": "Cañuelas", "slug": "cañuelas" },
+    { "nombre": "Azul", "slug": "azul" },
+    { "nombre": "Tapalqué", "slug": "tapalque" },
+    { "nombre": "Lobos", "slug": "lobos" }
+  ]

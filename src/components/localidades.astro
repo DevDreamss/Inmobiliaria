@@ -1,3 +1,7 @@
+---
+import localidades from "../data/localidades.json";
+---
+
 <section class="zonas" aria-labelledby="zonas-titulo">
   <div class="zonas-inner">
     <header class="zonas-head">
@@ -11,18 +15,11 @@
     </header>
 
     <div class="grid">
-      <a href="/saladillo" class="card">Saladillo</a>
-      <a href="/roque-perez" class="card">Roque Pérez</a>
-      <a href="/25-de-mayo" class="card">25 de Mayo</a>
-      <a href="/costa-atlantica" class="card">Costa Atlántica</a>
-      <a href="/la-plata" class="card">La Plata</a>
-      <a href="/las-flores" class="card">Las Flores</a>
-      <a href="/general-alvear" class="card">General Alvear</a>
-      <a href="/buenos-aires" class="card">Buenos Aires</a>
-      <a href="/cañuelas" class="card">Cañuelas</a>
-      <a href="/azul" class="card">Azul</a>
-      <a href="/tapalque" class="card">Tapalqué</a>
-      <a href="/lobos" class="card">Lobos</a>
+      {localidades.map((loc) => (
+        <a href={`/${loc.slug}`} class="card">
+          {loc.nombre}
+        </a>
+      ))}
     </div>
   </div>
 </section>
