@@ -60,7 +60,7 @@ const imagenesTipo = {
   {grupo.items.map((prop) => (
     <a href={`/propiedad/${prop.id}`} class="card">
       <img
-        src={prop.imagen || imagenesTipo[prop.tipo as keyof typeof imagenesTipo]}
+        src={prop.imagenes[0] || imagenesTipo[prop.tipo as keyof typeof imagenesTipo]}
         alt={prop.titulo}
       />
 
