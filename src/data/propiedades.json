@@ -4,12 +4,22 @@
       "titulo": "Casa moderna con patio",
       "tipo": "casa",
       "localidad": "saladillo",
-      "imagen": "/mapa.png",
+      "imagenes": [
+        "https://placehold.co/600x400?text=Casa+1",
+        "https://placehold.co/600x400?text=Casa+2",
+        "https://placehold.co/600x400?text=Casa+3"
+      ],
       "precio": "120.000 USD",
       "descripcion": "Hermosa casa con 3 habitaciones, patio amplio y garage.",
+      "caracteristicas": {
+        "habitaciones": 3,
+        "banos": 2,
+        "cocheras": 1,
+        "metros": 120
+      },
       "vendedor": {
         "nombre": "Juan Pérez",
-        "telefono": "2345 123456",
+        "telefono": "2345123456",
         "email": "juan@email.com"
       }
     }
