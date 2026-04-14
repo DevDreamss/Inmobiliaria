@@ -61,7 +61,7 @@ const imagenesTipo = {
               {grupo.items.map((prop) => (
                 <div class="card">
                   <img
-                    src={prop.imagen || imagenesTipo[prop.tipo]}
+                    src={prop.imagen || imagenesTipo[prop.tipo as keyof typeof imagenesTipo]}
                     alt={prop.titulo}
                   />
 
