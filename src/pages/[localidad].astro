@@ -2,7 +2,6 @@
 import propiedades from "../data/propiedades.json";
 import localidades from "../data/localidades.json";
 
-// Generar rutas estáticas
 export function getStaticPaths() {
   return localidades.map((loc) => ({
     params: { localidad: loc.slug }
@@ -58,20 +57,20 @@ const imagenesTipo = {
             <h2>{grupo.label}</h2>
 
             <div class="grid">
-              {grupo.items.map((prop) => (
-                <div class="card">
-                  <img
-                    src={prop.imagen || imagenesTipo[prop.tipo as keyof typeof imagenesTipo]}
-                    alt={prop.titulo}
-                  />
+  {grupo.items.map((prop) => (
+    <a href={`/propiedad/${prop.id}`} class="card">
+      <img
+        src={prop.imagen || imagenesTipo[prop.tipo]}
+        alt={prop.titulo}
+      />
 
-                  <div class="info">
-                    <h3>{prop.titulo}</h3>
-                    <p>{prop.precio}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+      <div class="info">
+        <h3>{prop.titulo}</h3>
+        <p>{prop.precio}</p>
+      </div>
+    </a>
+  ))}
+</div>
           </section>
         )
       ))}

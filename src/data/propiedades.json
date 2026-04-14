@@ -5,30 +5,12 @@
       "tipo": "casa",
       "localidad": "saladillo",
       "imagen": "/images/casa1.jpg",
-      "precio": "120.000 USD"
-    },
-    {
-        "id": 20,
-        "titulo": "Casa moderna con patio",
-        "tipo": "casa",
-        "localidad": "saladillo",
-        "imagen": "/images/casa1.jpg",
-        "precio": "120.000 USD"
-      },
-    {
-      "id": 2,
-      "titulo": "Departamento céntrico",
-      "tipo": "departamento",
-      "localidad": "saladillo",
-      "imagen": "/images/depto1.jpg",
-      "precio": "80.000 USD"
-    },
-    {
-      "id": 3,
-      "titulo": "Campo 20 hectáreas",
-      "tipo": "campo",
-      "localidad": "lobos",
-      "imagen": "/images/campo1.jpg",
-      "precio": "250.000 USD"
+      "precio": "120.000 USD",
+      "descripcion": "Hermosa casa con 3 habitaciones, patio amplio y garage.",
+      "vendedor": {
+        "nombre": "Juan Pérez",
+        "telefono": "2345 123456",
+        "email": "juan@email.com"
+      }
     }
   ]
